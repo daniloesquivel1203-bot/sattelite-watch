@@ -1,0 +1,33 @@
+* charge_g0.1_lim
+Vg g 0 0.1
+
+Bph 0 pvx I = 3.0*V(g)
+Bd pvx 0 I = 3.394100767710431e-08*(exp(min(V(pvx),40)/1.2023662014)-1)
+Rsh pvx 0 1000.0
+Rs pvx in 0.25
+
+Cin in 0 0.0001 ic=0
+* enable comparator with hysteresis
+Benx enx 0 V = V(in) > (V(en) > 0.5 ? 3.9 : 4.3) ? 1 : 0
+Ren enx en 1k
+Cen en 0 10n ic=0
+* 4 ms soft start
+Rss enx ss 4k
+Css ss 0 1u ic=0
+* averaged buck: regulates V(out), current limited, cannot exceed 97 % duty
+Bictl ictl 0 V = V(en) > 0.5 ? min(3.5, max(0, 50*(5.0*V(ss) - V(out)))) * min(1, max(0, 20*(0.97*V(in) - V(out)))) : 0
+Bout 0 out I = V(ictl)
+Bin in 0 I = V(en) > 0.5 ? V(out)*V(ictl)/(0.9*max(V(in),1)) + 100u : 5u
+Cout out 0 4.7e-05 ic=0
+Csc sc 0 10.0 ic=0
+Resr sc scx 0.05
+Bchg out scx I = V(out) > 4.6 ? min(0.5, max(0, 10*(V(out)-V(scx)))) : 0
+
+.options reltol=2e-3 abstol=1e-7 vntol=1e-5 method=gear
+.control
+set wr_singlescale
+set wr_vecnames
+tran 1m 120 0 5m uic
+wrdata /home/user/sattelite-watch/sim/power/out/charge_g0.1_lim.txt v(in) v(out) v(sc) v(en)
+.endc
+.end

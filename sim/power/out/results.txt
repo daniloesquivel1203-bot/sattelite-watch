@@ -1,0 +1,39 @@
+PANEL (generic 50 W, 36 cells, ASSUMED)
+condition | sun fraction | Voc V | Vmp V | Pmp W
+cold, cell at -1 C | 1.00 | 23.7 | 19.8 | 54.9
+cold, cell at -1 C | 0.20 | 21.9 | 18.5 | 10.0
+cold, cell at -1 C | 0.10 | 21.1 | 17.8 | 4.7
+cold, cell at -1 C | 0.05 | 20.2 | 17.0 | 2.1
+cold, cell at -1 C | min for 3.0 W: needs 8 % of full sun
+STC, cell at 25 C | 1.00 | 22.0 | 18.0 | 50.2
+STC, cell at 25 C | 0.20 | 20.0 | 16.6 | 9.1
+STC, cell at 25 C | 0.10 | 19.2 | 15.8 | 4.2
+STC, cell at 25 C | 0.05 | 18.2 | 15.0 | 1.9
+STC, cell at 25 C | min for 3.0 W: needs 8 % of full sun
+hot, cell at 75 C | 1.00 | 18.8 | 14.7 | 41.0
+hot, cell at 75 C | 0.20 | 16.5 | 13.1 | 7.1
+hot, cell at 75 C | 0.10 | 15.5 | 12.2 | 3.2
+hot, cell at 75 C | 0.05 | 14.5 | 11.3 | 1.4
+hot, cell at 75 C | min for 3.0 W: needs 10 % of full sun
+
+DAWN, no storage, sun ramped 0 to 30 % (compressed into 3 s)
+Buck starts at its own 4.3 V UVLO: load switched on 1860 times; rail stays up from 24.0 % sun
+EN divider: on at 14 V, off at 12.5 V: load switched on 59 times; rail stays up from 8.0 % sun
+
+HOLD-UP on the 5 V rail, 5.0 V down to 3.7 V, 3.0 W load
+C (F) | seconds
+5 | 9.1
+10 | 18.2
+25 | 45.5
+50 | 91.0
+
+CHARGING a 10 F bank from empty (no load)
+case | time to 4.75 V (s) | buck restarts
+   [full sun, direct on buck] after 120 s: supercap at 5.00 V, mean panel voltage 21.9 V
+full sun, direct on buck | 14 | 1
+   [10 % sun, direct on buck] after 3 s: supercap at 0.96 V, mean panel voltage 13.7 V
+10 % sun, direct on buck | nan | 1962
+   [10 % sun, 0.5 A limited charger] after 120 s: supercap at 5.00 V, mean panel voltage 18.3 V
+10 % sun, 0.5 A limited charger | 95 | 1
+   [5 % sun, 0.5 A limited charger] after 3 s: supercap at 0.00 V, mean panel voltage 9.7 V
+5 % sun, 0.5 A limited charger | nan | 1

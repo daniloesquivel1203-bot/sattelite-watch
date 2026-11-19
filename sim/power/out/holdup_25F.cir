@@ -1,0 +1,14 @@
+* holdup_25F
+Csc sc 0 25 ic=5
+Resr sc out 0.05
+Cout out 0 4.7e-05 ic=5
+Bload out 0 I = 3.0/max(V(out),2)
+
+.options reltol=2e-3 abstol=1e-7 vntol=1e-5 method=gear
+.control
+set wr_singlescale
+set wr_vecnames
+tran 10m 100 0 50m uic
+wrdata /home/user/sattelite-watch/sim/power/out/holdup_25F.txt v(out)
+.endc
+.end
