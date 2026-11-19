@@ -1,7 +1,6 @@
 (kicad_sch
-	(version 20250114)
-	(generator "eeschema")
-	(generator_version "9.0")
+	(version 20230121)
+	(generator eeschema)
 	(uuid "9b00e211-9f16-5c36-a47f-c5a5fb536b35")
 	(paper "A3")
 	(title_block
@@ -12,8 +11,7 @@
 		(comment 1 "Receiver board, phase 1")
 	)
 	(lib_symbols)
-	(text "CLOCK AND LO\nTO PLACE: 40 MHz TCXO, clock fan-out (synthesizer reference, ADC clock, FPGA clock),\nADF4351 with loop filter, RFOUTA and RFOUTB differential outputs split into four LO feeds.\nLO frequency depends on the IF decision (about 50 MHz proposed), so LO nets are named LO_RXn, not by frequency.\nInternal net to add when drawn: 40MHz_SYNTH_REF_CLK.\nCONFIRMED PARTS (sourcing thread, 2026-11-19): ADF4351BCPZ-RL7, LFCSP-32 5x5, JLCPCB C71362.\nECS-TXO-2520MV-400-AY-TR, 2.5x2.0 mm 4-pad, consigned.\nSIMULATION HAND-OFF: loop filter (lock time, phase noise), LO split match."
-		(exclude_from_sim no)
+	(text "CLOCK AND LO\nTO PLACE: 40 MHz TCXO, clock fan-out (synthesizer reference, ADC clock, FPGA clock),\nADF4351 with loop filter, RFOUTA and RFOUTB differential outputs split into four LO feeds.\nIF is about 50 MHz, so the LO is about 1571 MHz (low side) or 1671 MHz (high side). Side not chosen yet, so LO nets stay LO_RXn.\nInternal net to add when drawn: 40MHz_SYNTH_REF_CLK.\nCONFIRMED PARTS (sourcing thread, 2026-11-19): ADF4351BCPZ-RL7, LFCSP-32 5x5, JLCPCB C71362.\nECS-TXO-2520MV-400-AY-TR, 2.5x2.0 mm 4-pad, consigned.\nSIMULATION HAND-OFF: loop filter (lock time, phase noise), LO split match."
 		(at 25.4 25.4 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "3c621a72-7da4-58cc-a7d2-48914dcd9c51")
@@ -84,5 +82,4 @@
 		(effects (font (size 1.27 1.27)) (justify right))
 		(uuid "0af0daf7-7c89-5d00-866c-70a0106ed087")
 	)
-	(embedded_fonts no)
 )

@@ -1,7 +1,6 @@
 (kicad_sch
-	(version 20250114)
-	(generator "eeschema")
-	(generator_version "9.0")
+	(version 20230121)
+	(generator eeschema)
 	(uuid "491ef18e-6e68-52eb-a9a5-a216013c7ffa")
 	(paper "A3")
 	(title_block
@@ -12,8 +11,7 @@
 		(comment 1 "Receiver board, phase 1")
 	)
 	(lib_symbols)
-	(text "RECEIVER BOARD (phase 1)\n2x2 Iridium patch array, four phase-locked receive channels, shared LO and sample clock.\nPlugs into SoC and FPGA development kits through the board-to-board connector on this sheet.\n\nSKELETON ONLY: sheet hierarchy and inter-sheet net names. No parts placed yet.\nParts arrive from the sourcing thread; drawn blocks go to the simulation thread.\n\nTO PLACE ON THIS SHEET: board-to-board connector (5V_MAIN, GND, SPI_SYNTH_*, SYNTH_CE, SYNTH_LOCK_DETECT,\nLNA_EN, LNB_SEL, ADC_PD, 40MHz_FPGA_CLK, ADC1_D0..7, ADC2_D0..7), LNB coax connector (LNB_RF_IN), test points.\n\nPower rails are global power symbols, not sheet pins: 5V_MAIN, 3.3V_RF, 3.3V_SYNTH, 3.3V_ADC."
-		(exclude_from_sim no)
+	(text "RECEIVER BOARD (phase 1)\n2x2 Iridium patch array, four phase-locked receive channels, shared LO and sample clock.\nPlugs into SoC and FPGA development kits through the board-to-board connector on this sheet.\n\nDecided 2026-11-19: IF about 50 MHz (undersampled at 40 MHz, aliases to 10 MHz), MAX1193 8-bit converters, JLCPCB assembly.\nSKELETON ONLY: sheet hierarchy and inter-sheet net names. No parts placed yet.\nParts arrive from the sourcing thread; drawn blocks go to the simulation thread.\n\nTO PLACE ON THIS SHEET: board-to-board connector (5V_MAIN, GND, SPI_SYNTH_*, SYNTH_CE, SYNTH_LOCK_DETECT,\nLNA_EN, LNB_SEL, ADC_PD, 40MHz_FPGA_CLK, ADC1_D0..7, ADC2_D0..7), LNB coax connector (LNB_RF_IN), test points.\n\nPower rails are global power symbols, not sheet pins: 5V_MAIN, 3.3V_RF, 3.3V_SYNTH, 3.3V_ADC."
 		(at 25.4 20.32 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "afbdadda-6541-56f3-a794-11a307352d5e")
@@ -21,10 +19,6 @@
 	(sheet
 		(at 25.4 81.28)
 		(size 40.64 7.62)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
 		(stroke (width 0.1524) (type solid))
 		(fill (color 0 0 0 0.0000))
 		(uuid "070dc76b-9486-5379-9d25-2b79d0e642f1")
@@ -47,10 +41,6 @@
 	(sheet
 		(at 50.8 119.38)
 		(size 43.18 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
 		(stroke (width 0.1524) (type solid))
 		(fill (color 0 0 0 0.0000))
 		(uuid "00777e75-c020-5e5c-ba97-e91650d6bc17")
@@ -238,10 +228,6 @@
 	(sheet
 		(at 165.1 81.28)
 		(size 35.56 12.7)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
 		(stroke (width 0.1524) (type solid))
 		(fill (color 0 0 0 0.0000))
 		(uuid "0f9d590c-6f58-5b81-b908-bbb9527975c1")
@@ -354,10 +340,6 @@
 	(sheet
 		(at 165.1 106.68)
 		(size 35.56 12.7)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
 		(stroke (width 0.1524) (type solid))
 		(fill (color 0 0 0 0.0000))
 		(uuid "db298d8d-2334-5441-909a-8f474b544176")
@@ -458,10 +440,6 @@
 	(sheet
 		(at 165.1 132.08)
 		(size 35.56 12.7)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
 		(stroke (width 0.1524) (type solid))
 		(fill (color 0 0 0 0.0000))
 		(uuid "b33cce16-6d5b-5744-af99-686fa272ba70")
@@ -562,10 +540,6 @@
 	(sheet
 		(at 165.1 157.48)
 		(size 35.56 12.7)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
 		(stroke (width 0.1524) (type solid))
 		(fill (color 0 0 0 0.0000))
 		(uuid "9d056594-15fa-5117-a88d-5a04c11b88eb")
@@ -666,10 +640,6 @@
 	(sheet
 		(at 271.78 81.28)
 		(size 43.18 43.18)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
 		(stroke (width 0.1524) (type solid))
 		(fill (color 0 0 0 0.0000))
 		(uuid "0e6b3694-5b24-5995-b90d-f9cb0e802b4a")
@@ -1084,5 +1054,4 @@
 			(page "1")
 		)
 	)
-	(embedded_fonts no)
 )

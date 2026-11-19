@@ -1,7 +1,6 @@
 (kicad_sch
-	(version 20250114)
-	(generator "eeschema")
-	(generator_version "9.0")
+	(version 20230121)
+	(generator eeschema)
 	(uuid "d9b7c882-8616-5027-a9a0-cd0528da87eb")
 	(paper "A3")
 	(title_block
@@ -12,8 +11,7 @@
 		(comment 1 "Receiver board, phase 1")
 	)
 	(lib_symbols)
-	(text "RECEIVE CHANNEL (one sheet, instantiated as RX1 to RX4; keep all four identical for phase match)\nTO PLACE: patch antenna feed, ESD, band filter, MAX2659 LNA, MAX2682 mixer, IF amplifier, anti-alias filter.\nAUX_RF_IN / AUX_SEL: RF switch that swaps the patch for an external input and bypasses the band filter.\nUsed on RX1 only for the Starlink LNB (LNB_RF_IN, LNB_SEL). On RX2 to RX4 the pins are unconnected for now;\nplan is to fit the switch footprint on all four and mark the parts DNP on RX2 to RX4. Open for review.\nIF_OUT_P / IF_OUT_N assumes a differential IF driver into the MAX1193. Open for review.\nCONFIRMED PARTS (sourcing thread, 2026-11-19): MAX2659ELT+T, uDFN-6 1x1.5, JLCPCB C28043. MAX2682EUT+T, SOT-23-6, JLCPCB C242518.\nBoth symbols provisional until ADI change notice 2571 is read. Filter, IF amplifier, anti-alias and switch parts not confirmed yet.\nSIMULATION HAND-OFF: LNA match, mixer match, anti-alias filter, gain and noise budget."
-		(exclude_from_sim no)
+	(text "RECEIVE CHANNEL (one sheet, instantiated as RX1 to RX4; keep all four identical for phase match)\nTO PLACE: patch antenna feed, ESD, band filter, MAX2659 LNA, MAX2682 mixer, IF amplifier, anti-alias filter.\nAUX_RF_IN / AUX_SEL: RF switch that swaps the patch for an external input and bypasses the band filter.\nUsed on RX1 only for the Starlink LNB (LNB_RF_IN, LNB_SEL). On RX2 to RX4 the pins are unconnected for now;\nplan is to fit the switch footprint on all four and mark the parts DNP on RX2 to RX4. Open for review.\nIF_OUT_P / IF_OUT_N assumes a differential IF driver into the MAX1193. Open for review.\nCONFIRMED PARTS (sourcing thread, 2026-11-19): MAX2659ELT+T, uDFN-6 1x1.5, JLCPCB C28043. MAX2682EUT+T, SOT-23-6, JLCPCB C242518.\nBand filter: Qorvo QPQ1065 footprint (1.4 x 1.2 mm) with a bypass link on all four channels, fitted on one (sourcing recommendation, Danilo can overrule).\nAux switch: PE4259-63, SC-70-6, JLCPCB C470892. LNB bias boost (RX1 use, 5 V to 13 V): MT3608, SOT-23-6, JLCPCB C84817.\nPLACEHOLDER: IF amplifier and 50 MHz band-pass anti-alias filter, not picked until the ADS gain budget is done.\nSIMULATION HAND-OFF: LNA match, mixer match, anti-alias filter, gain and noise budget."
 		(at 25.4 25.4 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "3fc66320-3b73-5c53-9567-a7ecebf6c8c8")
@@ -54,5 +52,4 @@
 		(effects (font (size 1.27 1.27)) (justify right))
 		(uuid "3be101b8-07a6-5154-aaa2-fdc8889927ee")
 	)
-	(embedded_fonts no)
 )

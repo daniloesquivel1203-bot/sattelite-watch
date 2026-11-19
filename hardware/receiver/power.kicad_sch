@@ -1,7 +1,6 @@
 (kicad_sch
-	(version 20250114)
-	(generator "eeschema")
-	(generator_version "9.0")
+	(version 20230121)
+	(generator eeschema)
 	(uuid "162ccb4f-b8b1-5b60-9df1-1ea88b36b561")
 	(paper "A3")
 	(title_block
@@ -12,11 +11,9 @@
 		(comment 1 "Receiver board, phase 1")
 	)
 	(lib_symbols)
-	(text "POWER (all receiver rails on one sheet)\nIn:  5V_MAIN from the board-to-board connector\nOut: 3.3V_RF     LNAs, mixers, IF amplifiers\n     3.3V_SYNTH  ADF4351 and 40 MHz TCXO (low-noise LDO)\n     3.3V_ADC    MAX1193 analog and output supplies\nTO PLACE: input protection and filter, one low-noise LDO per rail, rail test points.\nRegulator part numbers: pending from the sourcing thread.\nSIMULATION HAND-OFF: each regulator (load step, PSRR, start-up) once drawn."
-		(exclude_from_sim no)
+	(text "POWER (all receiver rails on one sheet)\nIn:  5V_MAIN from the board-to-board connector\nOut: 3.3V_RF     LNAs, mixers, IF amplifiers\n     3.3V_SYNTH  ADF4351 and 40 MHz TCXO (low-noise LDO)\n     3.3V_ADC    MAX1193 analog and output supplies\nTO PLACE: input protection and filter, one low-noise LDO per rail, rail test points.\nCONFIRMED PARTS (sourcing thread, 2026-11-19): LP5907MFX-3.3/NOPB, SOT-23-5, JLCPCB C80670, one each for 3.3V_RF and 3.3V_ADC.\nOPEN: regulator for 3.3V_SYNTH (third LP5907 or shared with 3.3V_RF through a filter).\nSIMULATION HAND-OFF: each regulator (load step, PSRR, start-up) once drawn."
 		(at 25.4 25.4 0)
 		(effects (font (size 1.27 1.27)) (justify left top))
 		(uuid "1bed9f7f-cacd-5fb3-8f0a-85662f2e8fe7")
 	)
-	(embedded_fonts no)
 )
