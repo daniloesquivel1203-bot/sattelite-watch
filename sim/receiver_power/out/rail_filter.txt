@@ -1,0 +1,24 @@
+LC filter per rail (2.2 uH + 22 uF, damped), 150 mA load
+frequency | attenuation dB
+1000 Hz | -0.0
+10000 Hz | 0.7
+20000 Hz | 1.0
+100000 Hz | -25.5
+1e+06 Hz | -69.6
+2.2e+06 Hz | -74.4
+4.4e+06 Hz | -72.1
+5e+07 Hz | -71.9
+peaking: 1.3 dB at 16596 Hz
+DC drop at 180 mA: 18 mV
+
+LO spur at the switching frequency (2.2 MHz offset), 10 mV pk-pk ripple, pushing 1 MHz/V
+supply path to the synthesizer | ripple at the pin (uV pk) | spur dBc
+buck direct, no filter | 5000.00 | -59
+buck + LDO (about 40 dB PSRR at 2 MHz, ASSUMED) | 50.00 | -99
+buck + LC filter | 0.95 | -133
+buck + LC filter + LDO | 0.01 | -173
+
+Power drawn from 5V_MAIN by the receiver (309 mA typical at 3.3 V, 90 % buck efficiency ASSUMED)
+three LDOs from 5 V (as drawn): 1.54 W
+3.6 V buck then three LDOs: 1.24 W
+3.3 V buck with LC filters only: 1.13 W

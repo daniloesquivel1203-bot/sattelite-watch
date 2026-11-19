@@ -1,0 +1,17 @@
+* rail LC filter
+V1 in 0 dc 3.3 ac 1
+L1 in a 2.2u
+Rdcr a out 0.1
+C1 out c1 22u
+Rc1 c1 c1l 3m
+Lc1 c1l 0 0.6n
+Cd out d 47u
+Rd d 0 0.5
+Rl out 0 22.0
+.control
+set wr_singlescale
+set wr_vecnames
+ac dec 50 100 100meg
+wrdata /home/user/sattelite-watch/sim/receiver_power/out/f.txt vdb(out)
+.endc
+.end
