@@ -1,0 +1,27 @@
+RAIL FILTER as drawn (2.2 uH 84 mohm, 22 uF + [47 uF + 0.5 ohm]), by capacitor derating
+case | peaking dB | at Hz | attenuation at 3 MHz dB | at 51 MHz dB
+nominal 22 / 47 uF | 1.9 | 17219 | -73 | -73
+derated 18 / 23 uF | 3.3 | 17865 | -73 | -73
+derated, damper 0.33 ohm | 3.7 | 16032 | -73 | -74
+derated, damper 1 ohm | 4.7 | 22646 | -73 | -72
+derated, two 47 uF in damper (46 uF eff.) | 1.6 | 18323 | -73 | -73
+DC drop: SYNTH 15 mV, RF 13 mV, ADC 5 mV -> rails at about 3.335 / 3.337 / 3.345 V
+
+GENERIC BUCK LOOP with and without the three filters (phase margin at each unity-gain crossing)
+assumed crossover on C3 alone | without filters | with filters (derated caps)
+50 kHz | 81 deg at 51 kHz, 268 deg at 46881 kHz | 75 deg at 9 kHz, 207 deg at 35 kHz, 88 deg at 77 kHz, 269 deg at 46989 kHz
+100 kHz | 81 deg at 101 kHz, 267 deg at 23496 kHz | 84 deg at 117 kHz, 268 deg at 23550 kHz
+200 kHz | 83 deg at 200 kHz, 266 deg at 11885 kHz | 84 deg at 209 kHz, 266 deg at 11885 kHz
+300 kHz | 85 deg at 296 kHz, 264 deg at 8054 kHz | 85 deg at 301 kHz, 264 deg at 8072 kHz
+lowest impedance of the three filters seen from the buck: 66 mohm at 21 kHz (C3 alone there: 425 mohm)
+
+START-UP: total capacitance charged 141 uF (derated) to 3.35 V, plus 0.4 A load
+soft-start time ASSUMED | inductor current needed A
+100 us | 5.12
+250 us | 2.29
+500 us | 1.34
+1000 us | 0.87
+
+SWITCHING HARMONICS in the 50 MHz IF band (44.75 to 55.25 MHz if centred on 50), 3 MHz +/- 10 % oscillator
+harmonics of exactly 3.0 MHz in band: 15th = 45 MHz, 16th = 48 MHz, 17th = 51 MHz, 18th = 54 MHz
+with +/- 10 % tolerance any of the 14th to 20th harmonics can land in band; there are always 3 or 4 in band
