@@ -1,0 +1,35 @@
+* buck start-up
+Vref ref 0 PWL(0 0 50u 0 0.0003277777777777778 3.35)
+Blim lim 0 V = V(o) < 1.117 ? 0.7666666666666666 : 2.3
+Braw raw 0 V = 16.964600329384883*(V(ref)-V(o)) + V(xi)
+Bint 0 xi I = 1 * 3197751.825952952*(V(ref)-V(o))
+Cint xi 0 1 ic=0
+Rint xi 0 1g
+Bbuck 0 o I = min(V(lim), max(0, V(raw)))
+C3 o 0 18u ic=0
+L0 o a0 2.2u ic=0
+Rdcr0 a0 r0 0.084
+C0 r0 0 18u ic=0
+Cd0 r0 d0 1.1e-05 ic=0
+Rd0 d0 0 0.5
+Rl0 r0 0 21.153846153846153
+L1 o a1 2.2u ic=0
+Rdcr1 a1 r1 0.084
+C1 r1 0 18u ic=0
+Cd1 r1 d1 1.1e-05 ic=0
+Rd1 d1 0 0.5
+Rl1 r1 0 18.13186813186813
+L2 o a2 2.2u ic=0
+Rdcr2 a2 r2 0.084
+C2 r2 0 18u ic=0
+Cd2 r2 d2 1.1e-05 ic=0
+Rd2 d2 0 0.5
+Rl2 r2 0 55.0
+.options method=gear
+.control
+set wr_singlescale
+set wr_vecnames
+tran 0.2u 1.5m 0 0.2u uic
+wrdata /home/user/sattelite-watch/sim/receiver_power/out/s.txt v(o) v(r1) v(ref)
+.endc
+.end
