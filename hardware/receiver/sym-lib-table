@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "satwatch")(type "KiCad")(uri "${KIPRJMOD}/satwatch.kicad_sym")(options "")(descr "Project symbols"))
+)
